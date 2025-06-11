@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { Sidebar } from "@/components/Sidebar";
-import { Dashboard } from "@/components/Dashboard";
-import { CasesManagement } from "@/components/CasesManagement";
-import { ClientsManagement } from "@/components/ClientsManagement";
-import { TasksManagement } from "@/components/TasksManagement";
+import { useState } from 'react';
+import { Sidebar } from '@/components/Sidebar';
+import { Dashboard } from '@/components/Dashboard';
+import { CasesManagement } from '@/components/CasesManagement';
+import { ClientsManagement } from '@/components/ClientsManagement';
+import { TasksManagement } from '@/components/TasksManagement';
 
-const Index = () => {
-  const [activeSection, setActiveSection] = useState("dashboard");
+export default function Home() {
+  const [activeSection, setActiveSection] = useState('dashboard');
 
   const renderContent = () => {
     switch (activeSection) {
-      case "dashboard":
+      case 'dashboard':
         return <Dashboard />;
-      case "cases":
+      case 'cases':
         return <CasesManagement />;
-      case "clients":
+      case 'clients':
         return <ClientsManagement />;
-      case "tasks":
+      case 'tasks':
         return <TasksManagement />;
-      case "documents":
+      case 'documents':
         return (
           <div className="space-y-6">
             <h1 className="text-3xl font-bold text-gray-900">إدارة الوكالات</h1>
@@ -27,7 +27,7 @@ const Index = () => {
             </div>
           </div>
         );
-      case "finance":
+      case 'finance':
         return (
           <div className="space-y-6">
             <h1 className="text-3xl font-bold text-gray-900">الإدارة المالية</h1>
@@ -36,7 +36,7 @@ const Index = () => {
             </div>
           </div>
         );
-      case "sessions":
+      case 'sessions':
         return (
           <div className="space-y-6">
             <h1 className="text-3xl font-bold text-gray-900">إدارة الجلسات</h1>
@@ -45,7 +45,7 @@ const Index = () => {
             </div>
           </div>
         );
-      case "settings":
+      case 'settings':
         return (
           <div className="space-y-6">
             <h1 className="text-3xl font-bold text-gray-900">الإعدادات</h1>
@@ -63,12 +63,8 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Sidebar activeSection={activeSection} onSectionChange={setActiveSection} />
       <main className="mr-64 p-8">
-        <div className="max-w-7xl mx-auto">
-          {renderContent()}
-        </div>
+        <div className="max-w-7xl mx-auto">{renderContent()}</div>
       </main>
     </div>
   );
-};
-
-export default Index;
+}
