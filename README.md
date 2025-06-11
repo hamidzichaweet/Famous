@@ -1,3 +1,3 @@
-# React + TypeScript + Vite
+# Next.js 15 + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project now uses Next.js 15 instead of Vite. Run `npm run dev` to start the development server.
